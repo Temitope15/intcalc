@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Intrest Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2 id="h2">Intrest Calculator</h2>
+    <p id="p">
+      A simple calculator that helps you calculate intrests without stress!
+    </p>
+    <div class="intro" id="introText">
+      <p>What do you want to calculate?</p>
+      <div>
+        <button onclick="showSimpleInterest() " id="si">Simple Interest</button>
+        <button onclick="showCompoundInterest()" id="ci">
+          Compound Intrest
+        </button>
+      </div>
+    </div>
+    <div class="inputs simple-intrest-parent" id="simple-interest">
+      <label for="principal">Principal</label
+      ><input type="number" name="principal" id="principal" />
+      <label for="rate">Rate</label
+      ><input type="number" name="rate" id="rate" />
+      <label for="time">Time</label
+      ><input type="number" name="time" id="time" />
+
+      <button onclick="simpleIntrest()">Calculate</button>
+    </div>
+
+    <div class="compound-intrest-parent inputs" id="compound-interest">
+      <label for="compound-principal">Principal</label>
+      <input type="number" name="compound-principal" id="compound-principal" />
+      <label for="compound-rate">Rate</label
+      ><input type="number" name="compound-rate" id="compound-rate" />
+      <label for="time">Number of years</label>
+      <input type="number" name="compound-time" id="compound-time" />
+      <button onclick="compoundInterest()">Calculate</button>
+    </div>
+
+    <div class="result-parent">
+      <p id="para" class="result"></p>
+      <button
+        id="refresh"
+        class="refresh-button"
+        type="button"
+        onclick="window.location.reload()"
+      >
+        Refresh
+      </button>
+    </div>
+    <script src="calc.js"></script>
+  </body>
+</html>
