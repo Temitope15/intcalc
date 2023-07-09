@@ -30,14 +30,20 @@ function showCompoundInterest() {
   introPara.innerText =
     "Input your principal, rate and time taken to get the Amount paid on compound interest.";
 }
+const years = (year)=>{
+  if(year ===1){ return `${year} year`
+} else {
+    return `${year} years`
+}
 function simpleIntrest() {
   const p = parseInt(principal.value);
   const r = parseInt(rate.value);
   const t = parseInt(time.value);
   const refresh = document.getElementById("refresh");
   const i = (p * r * t) / 100;
+  
   if (i) {
-    result.innerText = `The Simple intrest on  #${p} at ${r}% for ${t} years is #${i}.
+    result.innerText = `The Simple intrest on  #${p} at ${r}% for ${years(t)} is #${i}.
       
       The amount is #${p + i}
       `;
@@ -57,7 +63,7 @@ function compoundInterest() {
 
   const A = P * (1 + R / 100) ** T;
   if (A) {
-    result.innerText = `The Amount on #${P} at ${R}% for ${T} years compound interest is #${Math.floor(
+    result.innerText = `The Amount on #${P} at ${R}% for ${year(T)}compound interest is #${Math.floor(
       A
     )}`;
     result.style.backgroundColor = "green";
