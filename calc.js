@@ -35,12 +35,14 @@ function showCompoundInterest() {
   introPara.innerText =
     "Input your principal, rate and time taken to get the Amount paid on compound interest.";
 }
+
 function simpleIntrest() {
   const p = parseInt(principal.value);
   const r = parseInt(rate.value);
   const t = parseInt(time.value);
   const refresh = document.getElementById("refresh");
   const i = (p * r * t) / 100;
+  
   if (i) {
     result.innerText = `The Simple interest on  #${p} at ${r}% for ${years(t)}  is #${i}.
       
