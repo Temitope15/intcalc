@@ -9,7 +9,12 @@ const compoundRate = document.getElementById("compound-rate");
 const compoundTime = document.getElementById("compound-time");
 
 const compoundInterestParent = document.getElementById("compound-interest");
-
+const years = (year)=> {
+  if(year ===1){ return `${year} year`
+} else {
+    return `${year} years`
+}
+}
 //handles
 const simpleIntrestParent = document.getElementById("simple-interest");
 const introText = document.getElementById("introText");
@@ -37,7 +42,7 @@ function simpleIntrest() {
   const refresh = document.getElementById("refresh");
   const i = (p * r * t) / 100;
   if (i) {
-    result.innerText = `The Simple intrest on  #${p} at ${r}% for ${t} years is #${i}.
+    result.innerText = `The Simple interest on  #${p} at ${r}% for ${years(t)}  is #${i}.
       
       The amount is #${p + i}
       `;
@@ -57,7 +62,7 @@ function compoundInterest() {
 
   const A = P * (1 + R / 100) ** T;
   if (A) {
-    result.innerText = `The Amount on #${P} at ${R}% for ${T} years compound interest is #${Math.floor(
+    result.innerText = `The Amount on #${P} at ${R}% for ${years(T)} compound interest is #${Math.floor(
       A
     )}`;
     result.style.backgroundColor = "green";
