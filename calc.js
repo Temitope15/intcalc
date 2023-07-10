@@ -50,7 +50,7 @@ function simpleIntrest() {
   const refresh = document.getElementById("refresh");
   const i = (p * r * t) / 100;
   
-  if (i) {
+   
     if(p <= 0){
       result.innerText = `#${p} will not yield any interest!`
     } else if(r<= 0){
@@ -68,7 +68,7 @@ function simpleIntrest() {
     inputs.style.display = "none";
     refresh.style.display = "block";
     }
-  }
+  
 }
 
 //function to calculate compound interest
@@ -79,7 +79,7 @@ function compoundInterest() {
   const refresh = document.getElementById("refresh");
 
   const A = P * (1 + R / 100) ** T;
-  if (A) {
+  
     if(P <= 0){
       result.innerText = `#${P} will not yield any interest!`
     } else if(R<= 0){
@@ -96,5 +96,5 @@ function compoundInterest() {
     refresh.style.display = "block";
     introPara.innerText = "Solution";
     }
-  }
+  
 }
