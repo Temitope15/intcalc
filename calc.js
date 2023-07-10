@@ -22,12 +22,7 @@ const years = (year)=> {
 } else {
     return `${year} years`
 }} 
-//create a function that can handle edge cases, a function that disallows 0 as an input
-const handleEdgeCases = (x, y ,z)=>{
-  if(x === 0 && y === 0  && z == 0){
-    return `must be greater than zero`
-  } 
-  } 
+
 
 //function to show simple interest interface
 function showSimpleInterest() {
