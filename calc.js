@@ -9,18 +9,22 @@ const compoundRate = document.getElementById("compound-rate");
 const compoundTime = document.getElementById("compound-time");
 
 const compoundInterestParent = document.getElementById("compound-interest");
-const years = (year)=> {
-  if(year ===1){ return `${year} year`
-} else {
-    return `${year} years`
-}
-}
-//handles
+
+//handles for result
 const simpleIntrestParent = document.getElementById("simple-interest");
 const introText = document.getElementById("introText");
 const h2 = document.getElementById("h2");
 const introPara = document.getElementById("p");
 
+//create a function that can handle the case one or more tha one years
+const years = (year)=> {
+  if(year ===1){ return `${year} year`
+} else {
+    return `${year} years`
+}} 
+
+
+//function to show simple interest interface
 function showSimpleInterest() {
   simpleIntrestParent.style.display = "flex";
   introText.style.display = "none";
@@ -28,6 +32,8 @@ function showSimpleInterest() {
   introPara.innerText =
     "Input your principal, rate and time taken to get the simple interest and amount paid.";
 }
+
+//function to show compound interest interface
 function showCompoundInterest() {
   compoundInterestParent.style.display = "flex";
   introText.style.display = "none";
@@ -36,6 +42,7 @@ function showCompoundInterest() {
     "Input your principal, rate and time taken to get the Amount paid on compound interest.";
 }
 
+//function to calculate simple interest
 function simpleIntrest() {
   const p = parseInt(principal.value);
   const r = parseInt(rate.value);
@@ -58,6 +65,7 @@ function simpleIntrest() {
   }
 }
 
+//function to calculate compound interest
 function compoundInterest() {
   const P = parseInt(compoundPrincipal.value);
   const R = parseInt(compoundRate.value);
