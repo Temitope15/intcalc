@@ -56,7 +56,7 @@ function simpleIntrest() {
     } else if(r<= 0){
       result.innerText = `if your rate is ${r}% you will not get any interest!`
     } else if(t<= 0){
-      result.innerText = `You have to invest #${p} for more than ${years(t)} `
+      result.innerText = `The minimum value for time is 1 year. `
     } else{
     result.innerText = `The Simple interest on  #${p} at ${r}% for ${years(t)}  is #${i}.
       
@@ -85,11 +85,9 @@ function compoundInterest() {
     } else if(R<= 0){
       result.innerText = `if your rate is ${R}% you will not get any interest!`
     } else if(T<= 0){
-      result.innerText = `You have to invest #${P} for more than ${years(T)} `
+      result.innerText = `The minimum value for time is 1 year. `
     } else{
-    result.innerText = `The Amount on #${P} at ${R}% for ${years(T)} compound interest is #${Math.floor(
-      A
-    )}`;
+    result.innerText = `The Amount on #${P} at ${R}% for ${years(T)} compound interest is #${Math.floor(A)}`;
     result.style.backgroundColor = "green";
     result.style.color = "white";
     compoundInterestParent.style.display = "none";
