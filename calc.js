@@ -50,7 +50,14 @@ function simpleIntrest() {
   const refresh = document.getElementById("refresh");
   const i = (p * r * t) / 100;
   
-  if (i &&  p > 0 && r > 0 && t> 0) {
+  if (i) {
+    if(p <= 0){
+      result.innerText = `#${p} will not yield any interest!`
+    } else if(r<= 0){
+      result.innerText = `if your rate is ${r}% you will not get any interest!`
+    } else if(t<= 0){
+      result.innerText = `You have to invest #${p} for more than ${years(t)} `
+    } else{
     result.innerText = `The Simple interest on  #${p} at ${r}% for ${years(t)}  is #${i}.
       
       The amount is #${p + i}
@@ -60,8 +67,7 @@ function simpleIntrest() {
     result.style.color = "white";
     inputs.style.display = "none";
     refresh.style.display = "block";
-  } else {
-    result.innerText = `#0 will not yield any interest!`
+    }
   }
 }
 
@@ -73,7 +79,14 @@ function compoundInterest() {
   const refresh = document.getElementById("refresh");
 
   const A = P * (1 + R / 100) ** T;
-  if (A && P> 0 && R > 0 && T > 0) {
+  if (A) {
+    if(P <= 0){
+      result.innerText = `#${P} will not yield any interest!`
+    } else if(R<= 0){
+      result.innerText = `if your rate is ${R}% you will not get any interest!`
+    } else if(T<= 0){
+      result.innerText = `You have to invest #${P} for more than ${years(T)} `
+    } else{
     result.innerText = `The Amount on #${P} at ${R}% for ${years(T)} compound interest is #${Math.floor(
       A
     )}`;
@@ -82,7 +95,6 @@ function compoundInterest() {
     compoundInterestParent.style.display = "none";
     refresh.style.display = "block";
     introPara.innerText = "Solution";
-  }else {
-    result.innerText = `#0 will not yield any interest!`
+    }
   }
 }
